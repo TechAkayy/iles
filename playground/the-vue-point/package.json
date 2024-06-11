@@ -14,7 +14,7 @@
     "node": "^14.18 || >= 16.0.0"
   },
   "devDependencies": {
-    "@iconify-json/carbon": "^1.0.14",
+    "@iconify-json/carbon": "^1.1.35",
     "@islands/excerpt": "workspace:^0.9",
     "@islands/feed": "workspace:*",
     "@islands/headings": "workspace:^0.8",
@@ -22,8 +22,8 @@
     "@islands/images": "workspace:*",
     "@islands/prism": "workspace:*",
     "iles": "workspace:*",
-    "remark-gfm": "^3.0.1",
-    "vite-plugin-windicss": "^1.9.0",
-    "vue-tsc": "^0.29.8"
+    "remark-gfm": "^4.0.0",
+    "vite-plugin-windicss": "^1.9.3",
+    "vue-tsc": "^2.0.21"
   }
 }
