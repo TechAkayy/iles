@@ -6,7 +6,7 @@ const argv: any = minimist(process.argv.slice(2))
 
 const command = argv._[0]
 const root = argv._[command ? 1 : 0]
-if (root) { argv.root = root }
+if (root) argv.root = root
 
 const getVersion = () => pc.cyan(`iles v${version}`) + pc.yellow(` vite v${viteVersion}`)
 
@@ -15,7 +15,7 @@ const printVersion = () => console.info(getVersion())
 executeCommand(!command || command === 'dev' ? 'serve' : command)
   .catch((error) => { throw error })
 
-async function executeCommand(command: string) {
+async function executeCommand (command: string) {
   if (command === 'serve') {
     const { createServer } = await import('./server')
     createServer(root, argv)
@@ -51,7 +51,7 @@ async function executeCommand(command: string) {
   }
   else if (command === 'test') {
     const { CONFIG_PATH } = await import('./alias')
-    const { spawn } = await import('node:child_process')
+    const { spawn } = await import('child_process')
     const args = process.argv.slice(2 + argv._.length)
     spawn('vitest', ['--config', CONFIG_PATH, ...args], { stdio: 'inherit' })
       .on('exit', code => process.exit(code || 0))
